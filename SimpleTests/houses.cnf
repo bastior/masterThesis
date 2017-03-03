@@ -1,0 +1,97 @@
+c Colors: Blue, Green or White
+c Nationalities: Dutch, German and Italian
+c Beverages: Coffee, Tea and Water
+c 
+c Lives relation L_G_1-3 L_I_4-6 L_D_7-9
+c Drinks relation D_W_10-12 D_C_13-15 D_T_16-18
+c Painted relation P_G_19-21 P_B_22-24 P_W_25-27
+c
+c C1: The third house is green
+c P_G_3 (21)
+c C5: The German lives in house two
+c L_G_2 (2)
+c C2: There is one house between the house of the person drinking coffee
+c and the blue house
+c (P_B_1 and D_C_3) or (P_B_3 and D_C_1)
+c 22 24 
+c 22 13 
+c 15 24 
+c 15 13 
+c C3: The person drinking water lives in the blue house
+c (D_W_1 and P_B_1) or (D_W_2 and P_B_2) or (D_W_3 and P_B_3)
+c 10 11 12
+c 10 11 24
+c 10 23 12
+c 10 23 24
+c 22 11 12
+c 22 11 24
+c 22 23 12
+c 22 23 24
+c C4: The Italian lives to the left of the coffee drinking person
+c (L_I_1 -> (D_C_2 or D_C_3)) and (L_I_2 -> D_C_3)) and neg L_I_3
+c -4 14 15
+c -5 15
+c -6
+c
+c Who lives in the 1st house? What does the Dutch drink?
+c
+c Unique solution: 2 4 9 10 15 17 21 22 26
+c
+c L_G_2 = 1 L_I_1 = 1 L_D_3 = 1 
+c D_W_1 = 1 D_C_3 = 1 D_T_2 = 1 
+c P_G_3 = 1 P_B_1 = 1 P_W_2 = 1
+c
+p cnf 27 53
+1 2 3 0
+-1 -4 0
+-1 -7 0
+-2 -5 0
+-2 -8 0
+-3 -6 0
+-3 -9 0
+4 5 6 0
+-4 -7 0
+-5 -8 0
+-6 -9 0
+7 8 9 0
+10 11 12 0
+-10 -13 0
+-10 -16 0
+-11 -14 0
+-11 -17 0
+-12 -15 0
+-12 -18 0
+13 14 15 0
+-13 -16 0
+-14 -17 0
+-15 -18 0
+16 17 18 0
+19 20 21 0
+-19 -22 0
+-19 -25 0
+-20 -23 0
+-20 -26 0
+-21 -24 0
+-21 -27 0
+22 23 24 0
+-22 -25 0
+-23 -26 0
+-24 -27 0
+25 26 27 0
+21 0
+2 0
+22 24 0
+22 13 0
+15 24 0
+15 13 0
+10 11 12 0
+10 11 24 0
+10 23 12 0
+10 23 24 0
+22 11 12 0
+22 11 24 0
+22 23 12 0
+22 23 24 0
+-4 14 15 0
+-5 15 0
+-6 0
