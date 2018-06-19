@@ -1,0 +1,3 @@
+[submodule "ThesisText"]
+	path = ThesisText
+	url = https://github.com/bastior/thesisText.git
